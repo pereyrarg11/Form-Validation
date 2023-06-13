@@ -12,7 +12,7 @@ class ValidateEmailUseCase {
             )
         }
 
-        if (Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+        if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
             return ValidationResult(
                 successful = false,
                 errorMessage = "That's not a valid email",
